@@ -1,0 +1,100 @@
+/*
+dark-blue: 29313A
+light-blue: B5DEF7
+orange-red: FF4916
+
+shadow-blue: 89ABCC
+*/
+
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+}
+
+#game {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    background-color: #29313A;
+}
+
+#game-space {
+    position: relative;
+    flex: 1 1 auto;
+    margin: 1.6rem;
+    border: 3px solid #B5DEF7;
+    border-radius: 2rem;
+    background-color: #FFFFFF;
+    overflow: hidden;
+}
+
+#control-console {
+    height: 9rem;
+    padding:0 1.6rem 1.6rem 1.6rem;
+    flex: 0 0 auto;
+    background-color: #29313A;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.cc-section {
+    flex-grow: 1;
+}
+
+/* direction controls */
+#direction-controls {
+    display: flex;
+    align-items: flex-end;
+}
+
+.direction-key {
+    height: 3.2rem;
+    width: 3.2rem;
+    border: 2px solid #FFFFFF;
+    border-radius: 3px;
+    background-color: #84909B;
+    margin-right: 0.3rem;
+    margin-left: 0.3rem;
+    margin-top: 0.6rem;
+}
+
+.direction-key.active {
+    background-color: #FF4916;
+}
+
+#up-key {
+    margin-top: 0;
+}
+
+.up-down {
+    display: flex;
+    flex-direction: column;
+}
+
+/* spaceship */
+#spaceship {
+    width: 4rem;
+    height: 2.6rem;
+    visibility: none;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    border: 2px solid #0065E7;
+    background-image: url('./images/rocket.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
