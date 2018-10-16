@@ -2,7 +2,7 @@
 # After Variable & Conditionals Sections
 # After Functions & Scope Section (3, 4)
 
-* variables --- need challenge to create a variable.
+* Re-assign Scroll World - Update Variables
 
 # Challenge 1 - choose the correct password to lower the drawbridge [variables, reassignments]
 - Create a const variable passwordOne and assign it to string "Insufficient facts always invite danger."
@@ -64,11 +64,27 @@ if (isAlien && coinNumber > 700){
 
 - 7. Reassign the coin number to a new amount to get the outcome needed to pass through the guards.
 
+#Challenge 4 - Change the words on the scrolling panel from "Hello World" to "Goodbye World by creating and calling a function called getAndChangeMessage that takes in a parameter called newMessage and changes the words to the new message."
 
+*Do all of these steps in the chrome console*
+- 1. Create a function that takes in one parameter called newMessage and changes the words on the scrolling panel from "Hello World" to "Goodbye World" using document.getElementById('<target id>').innerHTML to target that element.  
+Try to use ES6 syntax to create this function.
+- 2. The function should assign the innerHTML to the value of newMessage
+- 3. Create a constant variable called myMessage and assign it the value of "Goodbye World".
+- 3. Then, call your function and pass in myMessage.  See what happens!
+
+//  solution
+const myMessage = "Goodbye World";
+
+const getAndChangeMessage = (newMessage) => {
+  return document.getElementById('message').innerHTML = newMessage;
+};
+
+getAndChangeMessage(myMessage);
+
+
+- We need to change what we
 * Challenge Make Keys work... if else if challenge
-
-
-* Re-assign Scroll World - Update Variables
 
 
 * On Next Level Click ... move spaceship
