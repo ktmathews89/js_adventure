@@ -12,8 +12,17 @@ html {
 }
 
 body {
+    font-family: 'Bai Jamjuree', sans-serif;
     width: 100%;
     margin: 0;
+}
+
+button {
+    color: #ffffff;
+    font-size: 1.6rem;
+    background-color: #84909B;
+    border-radius: 2px;
+    min-width: 16rem;
 }
 
 #game {
@@ -50,6 +59,36 @@ body {
 
 .cc-section {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* message scroll */
+#message-scroll {
+    width: 100%;
+    height: 6rem;
+    border: 2px solid #B5DEF7;
+    background-color: #FFFFFF;
+    overflow: hidden;
+    position: relative;
+}
+
+#message {
+    color: #29313A;
+    font-size: 3.8rem;
+    line-height: 6rem;
+    text-align: center;
+    position: absolute;
+    /* scroll part */
+    -moz-transform:translateX(100%);
+    -webkit-transform:translateX(100%);
+    transform:translateX(100%);
+    /* animation */
+    -moz-animation: scroll-left 10s linear infinite;
+    -webkit-animation: scroll-left 10s linear infinite;
+    animation: scroll-left 10s linear infinite;
 }
 
 /* direction controls */
@@ -97,4 +136,27 @@ body {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+
+/* animations */
+@-moz-keyframes scroll-left {
+    0% { -moz-transform: translateX(100%); }
+    100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes scroll-left {
+    0% { -webkit-transform: translateX(100%); }
+    100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes scroll-left {
+    0% {
+        -moz-transform: translateX(100%); /* Browser bug fix */
+        -webkit-transform: translateX(100%); /* Browser bug fix */
+        transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(-100%); /* Browser bug fix */
+        -webkit-transform: translateX(-100%); /* Browser bug fix */
+        transform: translateX(-100%);
+    }
 }
