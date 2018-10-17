@@ -1,7 +1,14 @@
+import {moveUp, moveRight, moveDown, moveLeft} from './spaceship';
+
+let keyUp = false;
+let keyRight = false;
+let keyDown = false;
+let keyLeft = false;
 
 /* UP key actions */
 const controlUpPress = () => {
     document.querySelector('#up-key').classList.add('active');
+    moveUp();
 };
 
 const controlUpRelease = () => {
@@ -11,6 +18,7 @@ const controlUpRelease = () => {
 /* DOWN key actions */
 const controlDownPress = () => {
     document.querySelector('#down-key').classList.add('active');
+    moveDown();
 };
 
 const controlDownRelease = () => {
@@ -20,6 +28,7 @@ const controlDownRelease = () => {
 /* RIGHT key actions */
 const controlRightPress = () => {
     document.querySelector('#right-key').classList.add('active');
+    moveRight();
 };
 
 const controlRightRelease = () => {
@@ -29,6 +38,7 @@ const controlRightRelease = () => {
 /* LEFT key actions */
 const controlLeftPress = () => {
     document.querySelector('#left-key').classList.add('active');
+    moveLeft();
 };
 
 const controlLeftRelease = () => {
@@ -37,6 +47,10 @@ const controlLeftRelease = () => {
 
 
 const keyListners = () => {
+    document.addEventListener('keypress', function (event) {
+        console.log('keypressed', event);
+    });
+
     document.addEventListener('keydown', function (event) {
         switch (event.key) {
             case 'ArrowUp':

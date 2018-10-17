@@ -2,7 +2,7 @@
 const LEVEL_1_CORDINATES = {top: '50%', right: '0%'};
 
 const spaceship = document.getElementById('spaceship');
-const speed = 5;
+const speed = 30;
 
 const showSpaceship = () => {
     spaceship.style.visibility = "visible";
@@ -22,6 +22,7 @@ const setupSpaceship = (level) => {
             break;
     }
 };
+
 const getPosX = () => (spaceship.style.right ? parseInt(spaceship.style.right.split('px').shift()) : 0);
 const getPosY = () => (spaceship.style.top ? parseInt(spaceship.style.top.split('px').shift()) : 0);
 
@@ -38,8 +39,7 @@ const moveUp = () => {
 };
 
 const moveDown = () => {
-    spaceship.style.right = (getPosY() + speed) + 'px';
+    spaceship.style.top = (getPosY() + speed) + 'px';
 };
 
-
-export {setupSpaceship, moveLeft};
+export {setupSpaceship, moveLeft, moveRight, moveUp, moveDown};

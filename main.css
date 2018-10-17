@@ -160,3 +160,16 @@ button {
         transform: translateX(-100%);
     }
 }
+
+/* planet */
+#planet {
+    width: 8rem;
+    height: 8rem;
+    position: absolute;
+
+    background-color: #89ABCC;
+    border-radius: 50%;
+
+    top: 0;
+    left: 0;
+}
