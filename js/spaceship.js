@@ -1,11 +1,12 @@
-
-const LEVEL_1_CORDINATES = {top: '50%', right: '0%'};
+import { levelsConfig } from './levels';
 
 const spaceship = document.getElementById('spaceship');
 const speed = 30;
 
 const showSpaceship = () => {
     spaceship.style.visibility = "visible";
+    spaceship.style.top = levelsConfig[1]["spaceship"].top;
+    spaceship.style.right = levelsConfig[1]["spaceship"].right;
 };
 
 const hideSpaceship = () => {

@@ -1,3 +1,5 @@
+import { levelsConfig } from './levels';
+console.log(levelsConfig[1]["planet"]);
 
 const planet = document.getElementById('planet');
 
@@ -6,6 +8,8 @@ const getPosY = () => (planet.style.top ? parseInt(planet.style.top.split('px').
 
 const showPlanet = (x, y) => {
     planet.style.visibility = "visible";
+    planet.style.top = levelsConfig[1]["planet"].top;
+    planet.style.left = levelsConfig[1]["planet"].left;
 };
 
 const hidePlanet = () => {
@@ -13,7 +17,8 @@ const hidePlanet = () => {
 };
 
 const setupPlanet = (level) => {
-    return null;
+    showPlanet();
+    // return null;
 };
 
 export {setupPlanet};

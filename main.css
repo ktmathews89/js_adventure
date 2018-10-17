@@ -128,6 +128,8 @@ button {
     visibility: none;
 
     position: absolute;
+    /* perfectly centers the spaceship */
+    /* transform: translate(-50%, -50%); */
     top: 0;
     right: 0;
 
@@ -166,6 +168,8 @@ button {
     width: 8rem;
     height: 8rem;
     position: absolute;
+    /* perfectly centers the dot */
+    transform: translate(-50%, -50%);
 
     background-color: #89ABCC;
     border-radius: 50%;
