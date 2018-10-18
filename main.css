@@ -168,6 +168,7 @@ button {
     width: 8rem;
     height: 8rem;
     position: absolute;
+
     /* perfectly centers the dot */
     transform: translate(-50%, -50%);
 

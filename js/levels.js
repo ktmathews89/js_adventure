@@ -1,6 +1,8 @@
+let currentLevel = 1;
+
 const levelsConfig = [
     {
-        spaceship: { top: "50%", right: "5%" },
+        spaceship: { top: "50%", left: "95%" },
         planet: { top: "50%", left: "5%" }
     },
     {
@@ -16,4 +18,8 @@ const levelsConfig = [
     }
 ];
 
-export { levelsConfig };
+const getLevel = () => currentLevel;
+
+const getLevelConfig = () => levelsConfig[currentLevel - 1];
+
+export { levelsConfig, getLevel, getLevelConfig };
