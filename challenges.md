@@ -82,8 +82,39 @@ const getAndChangeMessage = (newMessage) => {
 
 getAndChangeMessage(myMessage);
 
+#Challenge 5 - write a few functions to get your working hours and your hours of free time
 
-- We need to change what we
+- 1. First, write a function that takes in no parameters that returns the total hours in a week (assuming it is 7 days), called getTotalHours.  Try to write it using ES6 syntax.  Then, log the result of calling function to the console using a template literal that says "Your total hours per week are HOURS.".
+
+// solution -->
+const getTotalHours = () => 24 * 7;
+console.log(`Your total hours per week are ${getTotalHours()}.`);
+
+- 2. Now, let's see how much time you spend working in a week (assuming it is 5 days) with another ES6 function. Create another function called getTotalWorkingHours, that takes in a parameter called workHours (your work hours each day) with a default parameter of 8 hours (a new ES6 feature) and returns how many total working hours there are in a week.  Print the results of the function call to the console as "Your total working hours are VALUE per week."  Try passing in different hour amounts to the function call and see what happens.
+
+// solution -->
+const getTotalWorkingHours = (workHours = 8) => {
+  return workHours * 5;
+}
+console.log(`Your total working hours per week are ${getTotalWorkingHours(10)}.`);
+
+- 3. Let's make a function that gets total hours you have off of work in a week.  Create a function called getTotalHoursFree which has no parameters.  Inside the function block, assign a variable called totalHours to the value of getTotalHours(). Create a variable called totalWorkingHours and assign it to getTotalWorkingHours(10). Return the value of totalHours - totalWorkingHours.  Create a variable called freeTime and assign it the value of calling getTotalHoursFree().  Print the results to the console as "Your total hours off of work are HOURS per week.".
+
+// solution -->
+  const getTotalHoursFree = () => {
+    const totalHours = getTotalHours();
+    const totalWorkingHours = getTotalWorkingHours(10);
+    return totalHours - totalWorkingHours;
+  }
+  const freeTime = getTotalHoursFree();
+  console.log(`Your total hours off of work are ${freeTime}.`);
+
+
+
+  /////////////////////////////////
+  MORE CHALLENGES
+
+
 * Challenge Make Keys work... if else if challenge
 
 
