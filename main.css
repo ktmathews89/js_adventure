@@ -126,10 +126,12 @@ button {
     width: 4rem;
     height: 2.6rem;
     visibility: none;
+    z-index: 100;
 
     position: absolute;
+
     /* perfectly centers the spaceship */
-    /* transform: translate(-50%, -50%); */
+    transform: translate(-50%, -50%);
     top: 0;
     right: 0;
 
@@ -164,18 +166,64 @@ button {
 }
 
 /* planet */
-#planet {
+#planet-wrapper-outer {
     width: 8rem;
     height: 8rem;
     position: absolute;
-
-    /* perfectly centers the dot */
+    top: 2rem;
+    left: 6rem;
+    transform-origin: center center;
     transform: translate(-50%, -50%);
+}
 
+.planet-wrapper-inner {
+    position: relative;
+    width: 8rem;
+    height: 8rem;
+}
+
+#planet {
+    width: 8rem;
+    height: 8rem;
     background-color: #89ABCC;
     background-image: linear-gradient(45deg, #89ABCC, pink);
     border-radius: 50%;
-
+    position: absolute;
     top: 0;
     left: 0;
+    transform-origin: center center;
+    z-index: 20;
+}
+
+#planet-glow {
+    border-radius: 50%;
+    background-color: #00FF00;
+    width: 8rem;
+    height: 8rem;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform-origin: center center;
+    z-index: 10;
+}
+
+#planet-glow.glowing {
+    animation: glow 4s infinite cubic-bezier(.36, .11, .89, .32);
+}
+
+@keyframes glow {
+  0% {
+    transform: scale(1, 1);
+    opacity: .5;
+  }
+
+  50% {
+    transform: scale(2, 2);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: .5;
+  }
 }

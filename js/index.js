@@ -1,10 +1,8 @@
-import {keyListners as setupKeyListners} from './controls';
-import {setupSpaceship, moveLeft} from './spaceship';
-import {setupPlanet} from './planet';
+import * as controls from './controls';
+import {setGame} from './gamespace';
+import * as levels from './levels';
+import * as planet from './planet';
+import * as spaceship from './spaceship';
+import * as utils from './util';
 
-let LEVEL = 1;
-
-/* Setup */
-setupKeyListners();
-setupSpaceship();
-setupPlanet();
+document.dispatchEvent(setGame, {level: 1});
