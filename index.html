@@ -12,13 +12,19 @@
 
         <div id="game-space">
             <div id="spaceship"></div>
-            <div id="planet"></div>
+
+            <div id="planet-wrapper-outer">
+                <div class="planet-wrapper-inner">
+                    <div id="planet"></div>
+                    <div id="planet-glow"></div>
+                </div>
+            </div>
         </div>
 
         <div id="control-console">
             <div id="cc-section-1" class="cc-section">
-                <button>NEXT LEVEL</button>
-                <button>RESET</button>
+                <button id="next-level">NEXT LEVEL</button>
+                <button id="reset-level">RESET LEVEL</button>
             </div>
             <div class="cc-section">
                 <div id="message-scroll">

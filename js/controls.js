@@ -1,4 +1,6 @@
-import {moveUp, moveRight, moveDown, moveLeft} from './spaceship';
+import {setGame} from './gamespace';
+import {levelWonEvent, nextLevelEvent, getCurrentLevel} from './levels';
+import {isLanded, moveUp, moveRight, moveDown, moveLeft} from './spaceship';
 
 let keyUp = false;
 let keyRight = false;
@@ -46,44 +48,48 @@ const controlLeftRelease = () => {
 };
 
 
-const keyListners = () => {
-    document.addEventListener('keypress', function (event) {
-        console.log('keypressed', event);
-    });
+/* Event Listeners */
+document.addEventListener('keydown', function (event) {
+    if (isLanded()){
+        document.dispatchEvent(levelWonEvent);
+    }
+    switch (event.key) {
+        case 'ArrowUp':
+            controlUpPress();
+            break;
+        case 'ArrowDown':
+            controlDownPress();
+            break;
+        case 'ArrowRight':
+            controlRightPress();
+            break;
+        case 'ArrowLeft':
+            controlLeftPress();
+            break;
+    };
+});
 
-    document.addEventListener('keydown', function (event) {
-        switch (event.key) {
-            case 'ArrowUp':
-                controlUpPress();
-                break;
-            case 'ArrowDown':
-                controlDownPress();
-                break;
-            case 'ArrowRight':
-                controlRightPress();
-                break;
-            case 'ArrowLeft':
-                controlLeftPress();
-                break;
-        };
-    });
+document.addEventListener('keyup', function (event) {
+    switch (event.key) {
+        case 'ArrowUp':
+            controlUpRelease();
+            break;
+        case 'ArrowDown':
+            controlDownRelease();
+            break;
+        case 'ArrowRight':
+            controlRightRelease();
+            break;
+        case 'ArrowLeft':
+            controlLeftRelease();
+            break;
+    };
+});
 
-    document.addEventListener('keyup', function (event) {
-        switch (event.key) {
-            case 'ArrowUp':
-                controlUpRelease();
-                break;
-            case 'ArrowDown':
-                controlDownRelease();
-                break;
-            case 'ArrowRight':
-                controlRightRelease();
-                break;
-            case 'ArrowLeft':
-                controlLeftRelease();
-                break;
-        };
-    });
-};
+document.getElementById('next-level').addEventListener('click', function (){
+    document.dispatchEvent(nextLevelEvent);
+});
 
-export {keyListners};
+document.getElementById('reset-level').addEventListener('click', function (){
+    document.dispatchEvent(setGame);
+});
