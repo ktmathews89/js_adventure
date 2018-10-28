@@ -9,6 +9,13 @@
 - Create a let variable called passwordTwo and assign it to string "Sometimes a feeling is all we humans have to go on."
 - Challenge 1 is to reassign the variable that can be reassigned to a new phrase: "Change is the essential process of all existence." and then console.log() to confirm it is reassigned.
 
+
+# Challenge 1 - Update the Scroll Message Box as you play the game
+- Reassign the Hello World Message with "LEVEL 1"
+- When landed... resassign .. LANDED!
+- if else to make keys light up or to move space ship
+- create function to increase or decrease spaceship speed
+
 #This will pass the first test, which is to go around a wall.  When they come across an obstacle, the screen should show some text explaining the level.
 
 # Challenge 2 - melt the ice to get through the wall by converting [variables, assigning statements, template literals]
