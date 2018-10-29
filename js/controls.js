@@ -47,7 +47,6 @@ const controlLeftRelease = () => {
     document.querySelector('#left-key').classList.remove('active');
 };
 
-
 /* Event Listeners */
 document.addEventListener('keydown', function (event) {
     if (isLanded()){

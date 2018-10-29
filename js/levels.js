@@ -1,3 +1,5 @@
+import {setMessage} from './gamespace';
+
 let currentLevel = 1;
 const getCurrentLevel = () => currentLevel;
 
@@ -32,6 +34,11 @@ const nextLevelEvent = new Event('nextLevel');
 /* Event Listeners */
 document.addEventListener('nextLevel', function () {
     currentLevel++;
+    setMessage('LEVEL ' + currentLevel);
+});
+
+document.addEventListener('setGame', function () {
+    setMessage('LEVEL ' + currentLevel);
 });
 
 export {levelsConfig, getCurrentLevel, getCurrentLevelConfig, levelWonEvent, nextLevelEvent};

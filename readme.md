@@ -47,7 +47,22 @@ First, you are going to need to do a ONE TIME install in your project directory.
 1. Open your terminal and navigate into your `js_adventure` git repository.
 2. Run `npm install`. Your computer should start installing somethings. When it is finished and you have your terminal command line back. Run `ls` and check if you have a `node_modules` directory. If you do, it worked! If not, contact a mentor on slack :)
 
-Now you should be ready to
+Now open the `index.html` file in Chrome and the game should work!
+
+**Updating files**
+
+When editing the javascript files for this project. You will need to run another `npm` command. Since ES6 isn't completely supported in browsers and we still want to use it, we need to use a tool to compile our code into plain javascript so the browser can read it. For that we will use webpack. It's a common tool for web development (and you will probably use it with a frontend framework).
+
+If you change the javascript files, you will have to run this command:
+
+`npm run build`
+
+However, to avoid having to run this command after every javascript change. You can run the following command:
+
+`npm run watch-build`
+
+Then npm will watch your files for changes and compile them automatically.
+
 
 
 # Challenge 1
