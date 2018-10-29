@@ -1,4 +1,4 @@
-import {getCurrentLevel} from './levels';
+import {getCurrentLevel, isGameover} from './levels';
 
 const gameBoard = document.getElementById('game-space');
 
@@ -14,7 +14,9 @@ const setGame = new Event('setGame');
 
 /* Event Listners */
 document.addEventListener('levelWon', function (){
-    setMessage('LANDED!')
+    if (!isGameover()){
+        setMessage('LANDED!');
+    }
 });
 
 export {gameBoard, gameSpaceHeight, gameSpaceWidth, setGame, setMessage};

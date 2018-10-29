@@ -1,7 +1,12 @@
 import {setMessage} from './gamespace';
 
+const HIGHEST_LEVEL = 3;
+const GAME_OVER = 4;
+
 let currentLevel = 1;
 const getCurrentLevel = () => currentLevel;
+
+const isGameover = () => currentLevel === GAME_OVER;
 
 const levelsConfig = [
     {
@@ -18,6 +23,10 @@ const levelsConfig = [
         obstacles: [
             { height: "3", width: "4", top: "8%", left: "50%" }
         ]
+    },
+    {
+        spaceship: {top: "50%", left: "50%"},
+        planet: {top: "50%", left: "50%"}
     }
 ];
 
@@ -33,12 +42,19 @@ const nextLevelEvent = new Event('nextLevel');
 
 /* Event Listeners */
 document.addEventListener('nextLevel', function () {
-    currentLevel++;
-    setMessage('LEVEL ' + currentLevel);
+    if (currentLevel < HIGHEST_LEVEL){
+        currentLevel++;
+        setMessage('LEVEL ' + currentLevel);
+    } else if (currentLevel === HIGHEST_LEVEL) {
+        currentLevel = GAME_OVER;
+        setMessage("Game Over");
+    }
 });
 
 document.addEventListener('setGame', function () {
-    setMessage('LEVEL ' + currentLevel);
+    if (!isGameover()) {
+        setMessage('LEVEL ' + currentLevel);
+    }
 });
 
-export {levelsConfig, getCurrentLevel, getCurrentLevelConfig, levelWonEvent, nextLevelEvent};
+export {levelsConfig, getCurrentLevel, getCurrentLevelConfig, levelWonEvent, nextLevelEvent, isGameover};
