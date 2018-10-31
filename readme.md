@@ -62,10 +62,3 @@ However, to avoid having to run this command after every javascript change. You 
 `npm run watch-build`
 
 Then npm will watch your files for changes and compile them automatically.
-
-
-
-# Challenge 1
-
-
-Currently when you clone the repo with git, you are on the `master` branch. However, each challenge on it's own branch. Your first challenge is on branch `ch1`, your second on `ch2` and so on. So when you start a challenge, your first task will be to "checkout" the branch with the following command: `git checkout -b ch1 origin/ch1`. basically this command creates a new branch in your local repository
