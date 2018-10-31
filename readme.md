@@ -26,7 +26,7 @@ Go ahead and clone this repo to your computer.
 
 That's it. Now if you do a `ls` in your terminal you should see the js_adventure directory!
 
-## Challenges
+## Install
 
 Before you do anything there are couple things you need to know to get this site up and running. Some ES6 javascript syntax is not supported in all browsers. So in order to write ES6 javascript, we will use node, npm and webpack. Yay! New things!
 
