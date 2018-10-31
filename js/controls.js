@@ -2,6 +2,8 @@ import {setGame} from './gamespace';
 import {levelWonEvent, nextLevelEvent, getCurrentLevel} from './levels';
 import {isLanded, moveUp, moveRight, moveDown, moveLeft} from './spaceship';
 
+import {arrowPressed} from './index';
+
 let keyUp = false;
 let keyRight = false;
 let keyDown = false;
@@ -10,7 +12,7 @@ let keyLeft = false;
 /* UP key actions */
 const controlUpPress = () => {
     document.querySelector('#up-key').classList.add('active');
-    moveUp();
+    // moveUp();
 };
 
 const controlUpRelease = () => {
@@ -20,7 +22,7 @@ const controlUpRelease = () => {
 /* DOWN key actions */
 const controlDownPress = () => {
     document.querySelector('#down-key').classList.add('active');
-    moveDown();
+    // moveDown();
 };
 
 const controlDownRelease = () => {
@@ -30,7 +32,7 @@ const controlDownRelease = () => {
 /* RIGHT key actions */
 const controlRightPress = () => {
     document.querySelector('#right-key').classList.add('active');
-    moveRight();
+    // moveRight();
 };
 
 const controlRightRelease = () => {
@@ -40,7 +42,7 @@ const controlRightRelease = () => {
 /* LEFT key actions */
 const controlLeftPress = () => {
     document.querySelector('#left-key').classList.add('active');
-    moveLeft();
+    // moveLeft();
 };
 
 const controlLeftRelease = () => {
@@ -52,6 +54,17 @@ document.addEventListener('keydown', function (event) {
     if (isLanded()){
         document.dispatchEvent(levelWonEvent);
     }
+
+    // for challenge 1
+    switch (event.key) {
+        case 'ArrowUp':
+        case 'ArrowDown':
+        case 'ArrowRight':
+        case 'ArrowLeft':
+            arrowPressed(event.key);
+            break;
+    };
+
     switch (event.key) {
         case 'ArrowUp':
             controlUpPress();
