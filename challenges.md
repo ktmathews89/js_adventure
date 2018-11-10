@@ -1,22 +1,26 @@
 
-# After Variable & Conditionals Sections
-# After Functions & Scope Section (3, 4)
+# Challenge 1
+* After Variable & Conditionals Sections
+* After Functions & Scope Section (3, 4)
 
-* Re-assign Scroll World - Update Variables
+## Problem 1 - Make the spaceship move
 
-# Challenge 1 - choose the correct password to lower the drawbridge [variables, reassignments]
-- Create a const variable passwordOne and assign it to string "Insufficient facts always invite danger."
-- Create a let variable called passwordTwo and assign it to string "Sometimes a feeling is all we humans have to go on."
-- Challenge 1 is to reassign the variable that can be reassigned to a new phrase: "Change is the essential process of all existence." and then console.log() to confirm it is reassigned.
+## Problem 2 - Increment levels
+
+## Problem 3 - Detect hit? Detect landed?
 
 
-# Challenge 1 - Update the Scroll Message Box as you play the game
-- Reassign the Hello World Message with "LEVEL 1"
-- When landed... resassign .. LANDED!
-- if else to make keys light up or to move space ship
-- create function to increase or decrease spaceship speed
+# Challenge 2
 
-#This will pass the first test, which is to go around a wall.  When they come across an obstacle, the screen should show some text explaining the level.
+## Problem 1 - Change Speed...
+
+create a change speed function
+    the spaceship only has a incrementSpeed and decrementSpeed function...
+    create a loop to keep calling that function until it reaches the speed. you entered.
+
+
+
+# Other
 
 # Challenge 2 - melt the ice to get through the wall by converting [variables, assigning statements, template literals]
 - Oh no!  Looks like we're going to need to generate 820 smarlfUnits (alien temperature units) to melt the ice to get through to the other side of this wall.

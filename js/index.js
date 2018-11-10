@@ -1,5 +1,5 @@
 import * as controls from './controls';
-import {setGame} from './gamespace';
+import {setGame, messageBox} from './gamespace';
 import * as levels from './levels';
 import * as planet from './planet';
 import * as spaceship from './spaceship';
@@ -25,8 +25,65 @@ document.dispatchEvent(setGame);
  *
  */
 const arrowPressed = (key) => {
-
+    /* Write your code in here */
 };
 
+/*
+ * Problem 2 - Next Level isn't incrementing levels
+ *
+ *  Problem: After you land the spaceship... the next level button should move
+ *  you up to the next level. But currently it's just doing the same thing as
+ *  reset level does... resets the current level.
+ *
+ *  To Solve: Add logic to the nextLevelBtnPressed function. This function
+ *  should increment the current level, but only if the spaceship is landed and
+ *  we have not reached the highest level yet. If we are at the highest level...
+ *  current level should be to a game over value. If game over or the spaceship
+ *  has not landed, current level should not be updated.
+ *
+ *      levels has some properties you should use to complete this problem:
+ *
+ *      setCurrentLevel(level) - a function, that will change the current level
+ *      getCurrentLevel() - a function, that will give you the current level
+ *      HIGHEST_LEVEL - a const, is the highest level a player can complete
+ *      GAME_OVER - a const, that is the level that represents completion of game
+ *
+ */
+ const nextLevelBtnPressed = () => {
+     /* Write your code in here */
+ };
 
-export {arrowPressed};
+ /*
+  * Problem 3 - Update Message after each level
+  *
+  *  Problem: So we fixed the next level button, but the message in the scroll
+  *  box isn't changing. It's suppose to change each time the next level is
+  *  updated. Let's fix that.
+  *
+  *  To Solve: First create a function called getMessage that takes one input
+  *  (or parameter) a level. And outputs or returns a string with the appropriate
+  *  message. This function should meet the following cases:
+  *
+  *     INPUT       OUTPUT
+  *     -------     -----------
+  *        1        'LEVEL 1'
+  *        2        'LEVEL 2'
+  *        3        'LEVEL 3'
+  *        4        'GAME OVER'
+  *
+  *  Then after you have your function created and working. We are going to
+  *  use it in the function you solved in problem 2. Let's add some more logic
+  *  to that.
+  *
+  *  After the level is updated... set messageBox.innerHTML variable to the
+  *  output of our getMessage function... make sure to pass into the function
+  *  the new level.
+  *
+  *  Make sure to test the game... every time you click next level... you should
+  *  see the scroll message update to the correct level number and then game
+  *  over after the 3rd level.
+  */
+
+/* Write your code here */
+
+export {arrowPressed, nextLevelBtnPressed};

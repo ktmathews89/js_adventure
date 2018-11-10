@@ -4,7 +4,9 @@ import {getPlanetBounds} from './planet';
 import {yPerToNum, xPerToNum, getXNum, getYNum, isOverlapping} from './util';
 
 const spaceship = document.getElementById('spaceship');
-const speed = 10;
+const MIN_SPEED = 5;
+const MAX_SPEED = 50;
+let speed = 10;
 let freezeSpaceship = false;
 
 const SPACESHIP_WIDTH = spaceship.clientWidth;
@@ -111,4 +113,14 @@ document.addEventListener('nextLevel', function (e){
     setupSpaceship();
 });
 
-export {setupSpaceship, moveLeft, moveRight, moveUp, moveDown, isLanded};
+export {
+    setupSpaceship,
+    moveLeft,
+    moveRight,
+    moveUp,
+    moveDown,
+    isLanded,
+    speed,
+    MAX_SPEED,
+    MIN_SPEED
+};

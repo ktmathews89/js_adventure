@@ -1,3 +1,5 @@
+import {nextLevelBtnPressed} from './index';
+
 import {setMessage} from './gamespace';
 
 const HIGHEST_LEVEL = 3;
@@ -5,6 +7,7 @@ const GAME_OVER = 4;
 
 let currentLevel = 1;
 const getCurrentLevel = () => currentLevel;
+const setCurrentLevel = (level) => currentLevel = level;
 
 const isGameover = () => currentLevel === GAME_OVER;
 
@@ -42,12 +45,13 @@ const nextLevelEvent = new Event('nextLevel');
 
 /* Event Listeners */
 document.addEventListener('nextLevel', function () {
-    if (currentLevel < HIGHEST_LEVEL){
-        currentLevel++;
-        setMessage('LEVEL ' + currentLevel);
-    } else if (currentLevel === HIGHEST_LEVEL) {
-        currentLevel = GAME_OVER;
-        setMessage("Game Over");
+    nextLevelBtnPressed();
+    if (currentLevel <= HIGHEST_LEVEL){
+        // currentLevel++;
+        // setMessage('LEVEL ' + currentLevel);
+    } else if (currentLevel === GAME_OVER) {
+        // currentLevel = GAME_OVER;
+        // setMessage("Game Over");
     }
 });
 
@@ -57,4 +61,14 @@ document.addEventListener('setGame', function () {
     }
 });
 
-export {levelsConfig, getCurrentLevel, getCurrentLevelConfig, levelWonEvent, nextLevelEvent, isGameover};
+export {
+    HIGHEST_LEVEL,
+    GAME_OVER,
+    levelsConfig,
+    getCurrentLevel,
+    setCurrentLevel,
+    getCurrentLevelConfig,
+    levelWonEvent,
+    nextLevelEvent,
+    isGameover
+};
